@@ -9,11 +9,11 @@ module.exports = {
 };
 
 function insert(bullion) {
-  return db('bullion').insert(bullion)
+  return db('bullion').insert(bullion);
 }
 
 function update(id, changes) {
-  return db('bullion').update(changes).where({id});
+  return db('bullion').where({id}).update(changes);
 }
 
 function remove(id) {
@@ -25,5 +25,5 @@ function getAll() {
 }
 
 function findById(id) {
-    return db('bullion').where({id});
+    return db('bullion').where({id}).first();
 }
